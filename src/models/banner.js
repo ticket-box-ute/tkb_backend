@@ -1,11 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Banner = new Schema({
+const Banner = new Schema(
+  {
     _id: { type: mongoose.Schema.Types.ObjectId, required: true },
     type: { type: Number, required: true },
     thumbnail: { type: String, required: true },
-    movieId: { type: String, required: true }
-});
+    movieId: { type: String, required: true },
+  },
+  { collection: "banners" }
+);
 
-module.exports = mongoose.model('Banner', Banner);
+module.exports = mongoose.model("Banner", Banner);

@@ -8,6 +8,6 @@ const VoucherSchema = new mongoose.Schema({
     applicableForBill: { type: Number, required: true },
     description: { type: String, required: true },
     listUidUsed: { type: [String], default: [] }
-});
+}, { collection: 'vouchers' });
 
 module.exports = VoucherSchema;

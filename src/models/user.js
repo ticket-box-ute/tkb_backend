@@ -9,6 +9,16 @@ const UserSchema = new mongoose.Schema({
     email: { type: String, required: true },
     birthDay: { type: String, required: false, default: '' },
     paymentCards: { type: [PaymentCardSchema], require: false, default: [] },
+    
+    // Admin fields
+    role: { 
+        type: String, 
+        enum: ['user', 'admin'],
+        default: 'user'
+    },
+    isActive: { type: Boolean, default: true },
+    createdAt: { type: Date, default: Date.now },
+    lastLoginAt: { type: Date }
 });
 
 module.exports = UserSchema;

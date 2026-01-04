@@ -7,6 +7,7 @@ const showtimesRouter = require('./showtimes_route')
 const userRouter = require('./user_router')
 const ticketRouter = require('./ticket_router')
 const chatRouter = require('./chat_route')
+const adminRouter = require('./admin_routes')
 
 function routes(app) {
     app.use('/movie', movieRouter)
@@ -26,6 +27,9 @@ function routes(app) {
     app.use('/ticket', ticketRouter)
 
     app.use('/chat', chatRouter)
+
+    // Admin routes
+    app.use('/admin', adminRouter)
 }
 
 module.exports = routes
