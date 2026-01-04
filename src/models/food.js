@@ -13,7 +13,7 @@ const FoodItemSchema = new mongoose.Schema({
 const FoodSchema = new mongoose.Schema({
     type: { type: String },
     data: { type: [FoodItemSchema] }
-})
+}, { collection: 'foods' })
 
 module.exports = FoodSchema
 

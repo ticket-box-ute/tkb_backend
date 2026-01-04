@@ -1,9 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
-const Actor = require('./actor')
+const Actor = require("./actor");
 
-const MovieShema = new mongoose.Schema({
+const MovieShema = new mongoose.Schema(
+  {
     _id: { type: ObjectId, required: false },
     content: { type: String, required: false },
     thumbnail: { type: String, required: false },
@@ -28,7 +29,9 @@ const MovieShema = new mongoose.Schema({
     languages: { type: [String], required: false },
     categories: { type: [String], required: false },
     rating: { type: Number, required: false },
-    totalPurchases: { type: Number, required: false }
-});
+    totalPurchases: { type: Number, required: false },
+  },
+  { collection: "movies" }
+);
 
-module.exports = MovieShema
+module.exports = MovieShema;
